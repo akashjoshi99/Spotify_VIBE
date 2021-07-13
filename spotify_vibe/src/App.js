@@ -11,7 +11,7 @@ import Player from "./Player"
 const spotify = new SpotifWebApi()
 
 function App() {
-  const [{search, playlists, discover_weekly, myPlaylists, user, token}, dispatch] = useDataLayerValue()  //for pulling data from datalayer
+  const [{search, playlists, discover_weekly, myPlaylists, user, token, userId}, dispatch] = useDataLayerValue()  //for pulling data from datalayer
 
 
 
@@ -53,7 +53,7 @@ function App() {
     //   })
     // })
 
-    spotify.getPlaylist("1vw1XBPJAZ9A7DtJerKPLQ").then(response => (
+    spotify.getPlaylist("37i9dQZF1DX7gIoKXt0gmx").then(response => (
       dispatch({
         type: 'SET_DISCOVER_WEEKLY',
         discover_weekly: response
@@ -67,10 +67,10 @@ function App() {
       })
     ))
 
-  }, [token])
+  }, [token || userId])
 
-  console.log("myuser: ", myPlaylists)
-  console.log("search: ", search)
+  console.log("discover_weekly: ", discover_weekly)
+  console.log("Action: ", userId)
 
 
   return (

@@ -10,26 +10,6 @@ import { useDataLayerValue } from "./DataLayer"
 function Sidebar() {
     const [{playlists, myPlaylists}, dispatch] = useDataLayerValue()
 
-    {myPlaylists?.items?.map(myPlaylists => (
-        console.log("data: ",myPlaylists[0])
-    ))}
-
-    {myPlaylists?.items?.map(myPlaylists => (
-        console.log("links: ", myPlaylists.id)
-    ))}
-
-    
-
-    function handleSubmit(e) {
-        e.preventDefault();
-        const id = e.target.id;
-        console.log("id: ", id);
-        {myPlaylists.items.map(myPlaylists => (
-           console.log(myPlaylists.id)
-        ))}
-      }
-
-
     return (
         <div className="sidebar">
             <img className="sidebar__logo" src="https://1000logos.net/wp-content/uploads/2017/08/Spotify-symbol.jpg" 
@@ -48,10 +28,7 @@ function Sidebar() {
             ))} */}
 
             {myPlaylists?.items?.map(myPlaylists => (
-                <button id={myPlaylists.id} onClick={handleSubmit} className="sidebar__button">
                     <SidebarOption id={myPlaylists.id} title ={myPlaylists.name} />
-                </button>
-                
             ))}
 
             {/* {myPlaylists?.items?.map(myPlaylists => (

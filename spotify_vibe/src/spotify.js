@@ -1,4 +1,6 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize"
+//http://localhost:3000/
+// for hosting: https://spotifyvibe-e0e8a.web.app/
 const redirectUri = "http://localhost:3000/"
 const clientId = "50d615488c9a47289b57a00bb0b70053"
 
